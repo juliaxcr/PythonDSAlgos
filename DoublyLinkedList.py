@@ -82,9 +82,36 @@ class DoublyLinkedList:
                 temp = temp.prev
         return temp
     
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
 
-my_dll = DoublyLinkedList(7)
+    def insert(self, index, value):
+        if index < 0 or index > self.length:
+            return False
+        if index == 0:
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+        
+        new_node = Node(value)
+        before = self.get(index - 1)
+        after = before.next
 
-my_dll.append(2)
+        new_node.prev = before
+        new_node.next = after
+        before.next = new_node
+        after.prev = new_node
 
-print(my_dll.get(1))
+        self.length += 1
+        return True
+
+        
+
+my_dll = DoublyLinkedList(1)
+my_dll.append(3)
+my_dll.insert(1,2)
+my_dll.print_list()
