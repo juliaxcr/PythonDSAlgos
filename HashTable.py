@@ -44,6 +44,21 @@ class HashTable:
         # append key value pair
         self.data_map[index].append([key, value])
         
+    def get_item(self, key):
+        # find index for key
+        index = self.__hash(key)
+        if self.data_map[index] is not None:
+            for i in range(len(self.data_map[index])):
+                if self.data_map[index][i][0] == key:
+                    # return value if key is found
+                    return self.data_map[index][i][1]
+        return None
 
 my_hash_table = HashTable()
-my_hash_table.print_table()
+
+my_hash_table.set_item('bolts', 1400)
+my_hash_table.set_item('washers', 50)
+
+print(my_hash_table.get_item('bolts'))
+print(my_hash_table.get_item('washers'))
+print(my_hash_table.get_item('lumber'))
