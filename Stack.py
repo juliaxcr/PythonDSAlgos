@@ -1,3 +1,4 @@
+# LIFO - last in, first out
 # Add and remove from one end
 # If you implement using list, use one end for both add and remove
 # If you implement using linked list, make sure the end where you remove and add is O(1)
