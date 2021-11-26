@@ -35,5 +35,15 @@ class HashTable:
         for i, val in enumerate(self.data_map):
             print(i, ": ", val)
 
+    def set_item(self, key, value):
+        # computes address
+        index = self.__hash(key)
+        # initialize empty list at address if not already initialized
+        if self.data_map[index] == None:
+            self.data_map[index] = []
+        # append key value pair
+        self.data_map[index].append([key, value])
+        
+
 my_hash_table = HashTable()
 my_hash_table.print_table()
