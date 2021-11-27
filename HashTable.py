@@ -24,6 +24,7 @@ class HashTable:
     def __init__(self, size = 7):
         self.data_map = [None] * size
 
+    # O(1)
     def __hash(self, key):
         my_hash = 0
         for letter in key:
@@ -35,6 +36,7 @@ class HashTable:
         for i, val in enumerate(self.data_map):
             print(i, ": ", val)
 
+    # O(1)
     def set_item(self, key, value):
         # computes address
         index = self.__hash(key)
@@ -43,7 +45,9 @@ class HashTable:
             self.data_map[index] = []
         # append key value pair
         self.data_map[index].append([key, value])
-        
+
+    # Assumed to be O(1) for dictionaries in Python, because
+    # distribution of key value pairs is assumed to be pretty even
     def get_item(self, key):
         # find index for key
         index = self.__hash(key)
@@ -72,3 +76,4 @@ my_hash_table.set_item('washers', 50)
 my_hash_table.set_item('lumber', 10)
 
 print(my_hash_table.keys())
+
