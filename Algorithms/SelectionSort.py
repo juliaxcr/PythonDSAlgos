@@ -18,3 +18,7 @@ def selection_sort(arr):
 arr = [4, 30, 6, 22, 1, 13]
 
 print(selection_sort(arr))
+
+# Time complexity = O(n^2)
+
+# Space complexity = O(1)

@@ -16,3 +16,7 @@ def bubble_sort(arr):
 arr = [64, 34, 25, 12, 22, 11, 90]
 
 print(bubble_sort(arr))
+
+# Time complexity = O(n^2)
+
+# Space complexity = O(1)
