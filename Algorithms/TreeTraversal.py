@@ -1,4 +1,4 @@
-# BFS, DFS, 
+# BFS, DFS 
 
 class Node:
     def __init__(self, value):
